@@ -29,14 +29,9 @@ pipeline {
                         sh dockerLogin 
                     }
                     
-                    // Tag Docker image for ACR
-                    def dockerTag = "docker tag ${DOCKER_IMAGE_NAME} ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}"
-                    sh dockerTag
                     
-                    // Push Docker image to ACR
-                    def dockerPush = "docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}"
-                    sh dockerPush
                 }
             }
         }
+}
     

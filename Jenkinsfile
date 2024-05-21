@@ -15,7 +15,7 @@ pipeline {
 			}
 		}	
 		
-		stages {
+		
         stage('build docker image from dockerfile') {
             steps{
                 sh 'docker image build -t vayhu.azurecr.io/demo1:${BUILD_NUMBER} .'
@@ -40,4 +40,3 @@ pipeline {
             }
         }
     }
-}

@@ -2,8 +2,6 @@ pipeline {
     agent any
 	tools {
 	    maven 'maven'
-	    git 'git'
-	    jdk 'jdk'
     }
 	 stages {
         stage('Checkout the code') {

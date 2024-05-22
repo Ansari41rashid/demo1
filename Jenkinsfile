@@ -1,20 +1,28 @@
 pipeline {
     agent any
-	tools{
-	    maven 'maven-3.6.3'
+	tools {
+	    maven 'maven'
+	    git 'git'
+	    jdk 'jdk'
     }
 	 stages {
         stage('Checkout the code') {
-            steps{
+            steps {
                 git url:'https://github.com/Ansari41rashid/demo1.git', branch: 'master'
 			}
 		}
-		stage('build the code'){
-		    steps{
-			    sh 'mvn clean package'
-			}
-		}
+         stage('compile') {
+	     steps {
+		     sh 'mvn compile'
+			
+		} 
 	 }
+         stage('build the code'){
+	     steps{
+		    sh 'mvn clean install'
+	   }
+	}
+    }
 }
 		
     

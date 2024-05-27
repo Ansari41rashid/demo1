@@ -12,13 +12,13 @@ pipeline {
 		}
          stage('compile') {
 	     steps {
-		     sh 'mvn clean install -DskipTests'
+		     sh 'mvn compile'
 			
 		} 
 	 }
          stage('build the code'){
 	     steps{
-		    sh 'mvn clean install' '-D skiptest=true'
+		    sh 'mvn clean install -DskipTests'
 	   }
 	}
     }
